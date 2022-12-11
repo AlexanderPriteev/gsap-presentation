@@ -1,40 +1,82 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+            <section>
+                <div>
+                    <img src="./assets/logo.png" width="520">
+                </div>
+            </section>
+            <section>
+                <div style="display: flex; flex-wrap: wrap; gap: 26px; width: 100%; max-width: 400px; margin: auto">
+                    <img src="./assets/logo/html-5-logo-svgrepo-com.svg"  style="width: calc(54% - 13px)">
+                    <img src="./assets/logo/css-svgrepo-com.svg"  style="width: calc(46% - 13px)">
+                    <img src="./assets/logo/VRT_Canvas_2020.svg"  style="width: 300px; margin: auto">
+                </div>
+            </section>
+            <section>
+                <div style="display: flex; flex-wrap: wrap; gap: 26px; width: 100%; max-width: 400px; margin: auto">
+                    <img src="./assets/logo/react-svgrepo-com.svg"  style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/angular-svgrepo-com.svg"  style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/vue-svgrepo-com.svg"  style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/jquery-svgrepo-com.svg"  style="width: calc(50% - 13px)">
+                </div>
+            </section>
+            <section>
+                <h4>Скорость и производительность</h4>
+                <div>
+                    <img src="./assets/fast.png" width="520">
+                </div>
+            </section>
+            <section>
+                <div>
+                    <a href="https://codepen.io/GreenSock/full/DrPzmR">codepen</a>
+                </div>
+                <div style="overflow: hidden; ">
+                    <iframe src="https://codepen.io/GreenSock/full/DrPzmR" frameborder="0" width="100%" height="600px" style="transform: translateY(-70px)"></iframe>
+                </div>
+            </section>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section>
+            <section>
+                <h3>Properties / Methods</h3>
+            </section>
+        </section>
+        <section>Slide 2</section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>
