@@ -25,27 +25,18 @@
             </section>
             <section>
                 <div style="display: flex; flex-wrap: wrap; gap: 26px; width: 100%; max-width: 400px; margin: auto">
-                    <img src="./assets/logo/html-5-logo-svgrepo-com.svg"  style="width: calc(54% - 13px)">
-                    <img src="./assets/logo/css-svgrepo-com.svg"  style="width: calc(46% - 13px)">
-                    <img src="./assets/logo/VRT_Canvas_2020.svg"  style="width: 300px; margin: auto">
+                    <img src="./assets/logo/html-5-logo-svgrepo-com.svg" style="width: calc(54% - 13px)">
+                    <img src="./assets/logo/css-svgrepo-com.svg" style="width: calc(46% - 13px)">
+                    <img src="./assets/logo/VRT_Canvas_2020.svg" style="width: 300px; margin: auto">
                 </div>
             </section>
             <section>
                 <div style="display: flex; flex-wrap: wrap; gap: 26px; width: 100%; max-width: 400px; margin: auto">
-                    <img src="./assets/logo/react-svgrepo-com.svg"  style="width: calc(50% - 13px)">
-                    <img src="./assets/logo/angular-svgrepo-com.svg"  style="width: calc(50% - 13px)">
-                    <img src="./assets/logo/vue-svgrepo-com.svg"  style="width: calc(50% - 13px)">
-                    <img src="./assets/logo/jquery-svgrepo-com.svg"  style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/react-svgrepo-com.svg" style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/angular-svgrepo-com.svg" style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/vue-svgrepo-com.svg" style="width: calc(50% - 13px)">
+                    <img src="./assets/logo/jquery-svgrepo-com.svg" style="width: calc(50% - 13px)">
                 </div>
-            </section>
-            <section>
-                <a href="https://greensock.com/showcase/"><h3>Примеры</h3></a>
-            </section>
-
-        </section>
-        <section>
-            <section>
-                <a href="https://codepen.io/shshaw/pen/vYKBPbv/9e810322d70c306de2d18237d0cb2d78"><h3>Видео</h3></a>
             </section>
             <section>
                 <div>
@@ -53,24 +44,119 @@
                 </div>
             </section>
             <section>
-                <div>
-                    <a href="https://codepen.io/GreenSock/full/DrPzmR">codepen</a>
-                </div>
-                <div style="overflow: hidden; ">
-                    <iframe src="https://codepen.io/GreenSock/full/DrPzmR" frameborder="0" width="100%" height="600px" style="transform: translateY(-70px)"></iframe>
-                </div>
-            </section>
-            <section>
-                <div><a href="https://codepen.io/lugindm/pen/aboMRJW">GSAP</a> | <a href="https://codepen.io/lugindm/pen/NWGEoxB">Anime</a></div>
+                <a href="https://greensock.com/showcase/">Примеры</a>
             </section>
         </section>
-
         <section>
             <section>
-                <h3>Properties / Methods</h3>
+                <h3>Скорость и Производительность</h3>
+            </section>
+
+            <section>
+                <div>
+                    <a href="https://codepen.io/GreenSock/full/DrPzmR" style="font-size: 26px">codepen</a>
+                </div>
+                <div style="overflow: hidden; ">
+                    <iframe src="https://codepen.io/GreenSock/full/DrPzmR" frameborder="0" width="100%" height="600"
+                            style="transform: translateY(-70px)"></iframe>
+                </div>
+            </section>
+            <section>
+                <div><a href="https://codepen.io/lugindm/pen/aboMRJW">GSAP</a> | <a
+                        href="https://codepen.io/lugindm/pen/NWGEoxB">Anime</a></div>
+            </section>
+            <section>
+                <div><a href="http://localhost:3000/#/video" style="font-size: 26px">Scroll Video</a></div>
+                <iframe src="http://localhost:3000/#/video" frameborder="0" width="720" height="405"></iframe>
             </section>
         </section>
-        <section>Slide 2</section>
+        <section>
+            <section>
+                <h3>установка и подключение</h3>
+            </section>
+            <section>
+
+                	<pre>
+                        <code data-trim data-line-numbers="1|2|1-2">
+npm install gsap
+yarn add gsap
+ 						</code>
+                    </pre>
+            </section>
+            <section>
+                <h4 style="text-transform: none">ES modules</h4>
+                	<pre>
+                        <code data-trim data-line-numbers="1|2-3|1-3">
+import gsap from "gsap";
+import PixiPlugin from "gsap/PixiPlugin.js";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
+
+
+ 						</code>
+                    </pre>
+            </section>
+            <section>
+                <h4 style="text-transform: none">CommonJS</h4>
+                <pre>
+                        <code data-trim data-line-numbers="1-3">
+const { gsap } = require("gsap/dist/gsap");
+const { PixiPlugin } = require("gsap/dist/PixiPlugin");
+const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
+ 						</code>
+                    </pre>
+            </section>
+            <section>
+                <h4 style="text-transform: none">&lt;script /&gt;</h4>
+                <pre>
+                        <code data-trim data-line-numbers="1-2">
+<script src="./js/gsap/gsap.min.js"></script>
+<script src="./js/libs/gsap/EasePack.min.js"></script>
+ 						</code>
+                    </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Methods </h3>
+            </section>
+            <section>
+                <p>gsap.to()</p>
+                <p>gsap.from()</p>
+                <p>gsap.fromTo()</p>
+            </section>
+            <section>
+                <pre><code>gsap.to(targets, vars)</code></pre>
+                <pre><code>gsap.from(targets, vars)</code></pre>
+                <pre><code>gsap.fromTo(targets, fromVars, toVars)</code></pre>
+            </section>
+            <section>
+                <p>duration</p>
+                <p>ease</p>
+                <p>delay</p>
+                <p>onStart / onComplete</p>
+                <p>repeat</p>
+            </section>
+            <section>
+                <pre><code  data-trim data-line-numbers="3-7">const CartMove = (props: IRefs) => {
+  useEffect(() => {
+    gsap.fromTo(
+      props.elRef.current,
+      { opacity: 0, x: -300 },
+      { opacity: 1, x: 0, duration: 1, ease: 'circ.in'}
+    );
+  }, [props.elRef]);
+  return (
+    <div className="cart" ref={props.elRef}>
+      Data
+    </div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/move" frameborder="0" width="720" height="405"></iframe>
+            </section>
+        </section>
+        <section>Properties</section>
     </div>
 </div>
 
