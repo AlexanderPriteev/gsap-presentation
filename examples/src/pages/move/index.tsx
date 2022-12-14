@@ -2,7 +2,7 @@ import gsap from 'gsap';
 
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 
-interface IRefs {
+export interface IRefs {
   elRef: RefObject<HTMLDivElement>;
 }
 
@@ -26,7 +26,7 @@ const Cart = (props: IRefs) => {
       { opacity: 0 },
       {
         opacity: 1,
-        duration: 1.5,
+        duration: 0.4,
         ease: 'circ.in',
       }
     );
@@ -42,11 +42,12 @@ const CartMove = (props: IRefs) => {
   useEffect(() => {
     gsap.fromTo(
       props.elRef.current,
-      { opacity: 0, x: -300 },
+      { opacity: 0, x: -400, scale: 0 },
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        scale: 1,
+        duration: 0.6,
         ease: 'circ.in',
       }
     );
@@ -82,7 +83,7 @@ export const Move = () => {
     if (cart) {
       gsap.to(cartRef.current, {
         opacity: 0,
-        duration: 1.5,
+        duration: 0.4,
         ease: 'circ.in',
         onComplete: () => {
           setCart(!cart);
@@ -98,7 +99,8 @@ export const Move = () => {
       gsap.to(cartMoveRef.current, {
         opacity: 0,
         x: -400,
-        duration: 1,
+        scale: 0,
+        duration: 0.4,
         ease: 'circ.in',
         onComplete: () => {
           setCartMove(!cartMove);

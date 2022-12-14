@@ -120,6 +120,8 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <h3>Methods </h3>
             </section>
             <section>
+                <h2 style="color: #42affa; text-transform: none;">Tween</h2>
+
                 <p>gsap.to()</p>
                 <p>gsap.from()</p>
                 <p>gsap.fromTo()</p>
@@ -130,6 +132,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <pre><code>gsap.fromTo(targets, fromVars, toVars)</code></pre>
             </section>
             <section>
+                <p>id</p>
                 <p>duration</p>
                 <p>ease</p>
                 <p>delay</p>
@@ -155,8 +158,66 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
             <section>
                 <iframe src="http://localhost:3000/#/move" frameborder="0" width="720" height="405"></iframe>
             </section>
+            <section>
+                <p>gsap.set()</p>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="4 | 5 | 4-5">const CartMove = (props: IRefs) => {
+  useEffect(() => {
+    const elem = props.elRef.current;
+    gsap.set(elem, { opacity: 0, x: -400, scale: 0 });
+    gsap.to(elem, { opacity: 1, x: 0, scale: 1 });
+  }, [props.elRef]);
+  return (
+    <div className="cart" ref={props.elRef}>
+      Data
+    </div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/set" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.defaults()</p>
+                <pre><code>gsap.defaults({ ease: 'bounce.in', duration: 3 });</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/default" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.matchMedia()</p>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="4 | 5-7 | 8-10 | 3-11">const CartMove = (props: IRefs) => {
+  useEffect(() => {
+    const el = props.elRef.current;
+    const gMedia = gsap.matchMedia();
+    gMedia.add('(min-width: 720px)', () => {
+      gsap.set(el, { opacity: 0, x: -400, scale: 0 });
+    });
+    gMedia.add('(max-width: 719px)', () => {
+      gsap.set(el, { opacity: 0, x: 400, scale: 0 });
+    });
+    gsap.to(el, { opacity: 1, x: 0, scale: 1 });
+  }, [props.elRef]);
+  return (...);
+};</code></pre>
+            </section>
+            <section>
+                <p>width: 720px</p>
+                <iframe src="http://localhost:3000/#/media" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>width: 700px</p>
+                <iframe src="http://localhost:3000/#/media" frameborder="0" width="700" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.quickTo()</p>
+                <p>gsap.quickSetter()</p>
+            </section>
         </section>
-        <section>Properties</section>
+        <section><h2>Properties</h2></section>
     </div>
 </div>
 
