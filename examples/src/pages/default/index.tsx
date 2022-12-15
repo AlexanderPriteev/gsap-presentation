@@ -1,6 +1,6 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { IRefs } from '../move';
+import { IRefs } from '../tween';
 
 const CartMove = (props: IRefs) => {
   useEffect(() => {

@@ -95,5 +95,42 @@ h1, h2, h3, h4, h5, h6, p{
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    &--column{
+      flex-direction: column;
+      overflow: hidden;
+      background-color: #424242;
+    }
+    &--block{
+      width: 680px;
+      height: 340px;
+      display: block;
+      margin: auto;
+      flex-grow: inherit;
+    }
+  }
+  &-wrapper{
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    background-color: #191919;
+    box-sizing: border-box;
+    padding: 10px;
+    max-width: 720px;
+    max-height: 420px;
+    margin: auto;
   }
 }
+.quick{
+  flex-grow: 1;
+  position: relative;
+  &-image{
+    width: 120px;
+    height: 26px;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 13px);
+  }
+
+}
+

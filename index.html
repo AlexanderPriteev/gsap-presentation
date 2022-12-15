@@ -138,6 +138,8 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <p>delay</p>
                 <p>onStart / onComplete</p>
                 <p>repeat</p>
+                <p>yoyo</p>
+                <p>paused</p>
             </section>
             <section>
                 <pre><code  data-trim data-line-numbers="3-7">const CartMove = (props: IRefs) => {
@@ -145,7 +147,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
     gsap.fromTo(
       props.elRef.current,
       { opacity: 0, x: -300 },
-      { opacity: 1, x: 0, duration: 1, ease: 'circ.in'}
+      { opacity: 1, x: 0, duration: 1, ease: "circ.in"}
     );
   }, [props.elRef]);
   return (
@@ -180,7 +182,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
             </section>
             <section>
                 <p>gsap.defaults()</p>
-                <pre><code>gsap.defaults({ ease: 'bounce.in', duration: 3 });</code></pre>
+                <pre><code>gsap.defaults({ ease: "bounce.in", duration: 3 });</code></pre>
             </section>
             <section>
                 <iframe src="http://localhost:3000/#/default" frameborder="0" width="720" height="405"></iframe>
@@ -193,10 +195,10 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
   useEffect(() => {
     const el = props.elRef.current;
     const gMedia = gsap.matchMedia();
-    gMedia.add('(min-width: 720px)', () => {
+    gMedia.add("(min-width: 720px)", () => {
       gsap.set(el, { opacity: 0, x: -400, scale: 0 });
     });
-    gMedia.add('(max-width: 719px)', () => {
+    gMedia.add("(max-width: 719px)", () => {
       gsap.set(el, { opacity: 0, x: 400, scale: 0 });
     });
     gsap.to(el, { opacity: 1, x: 0, scale: 1 });
@@ -214,8 +216,199 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
             </section>
             <section>
                 <p>gsap.quickTo()</p>
-                <p>gsap.quickSetter()</p>
+                <pre><code>gsap.quickTo(targets, property, vars)</code></pre>
             </section>
+            <section>
+                <pre><code  data-trim data-line-numbers="5-6" style="font-size: 18px">const QuickTo = () => {
+  const imageMoveRef = useRef() as RefObject&lt;HTMLImageElement&gt;;
+  const mouseMove = (e: React.MouseEvent&lt;HTMLDivElement&gt;) => {
+    const image = imageMoveRef.current;
+    gsap.quickTo(image, "x", { left: 0, ease: "bounce.out" })(e.pageX);
+    gsap.quickTo(image, "y", { top: 0, ease: "bounce.out" })(e.pageY);
+  };
+  return (
+    &lt;div className="quick" onMouseMove={(e) =&lt; mouseMove(e)}&gt;
+      &lt;img src={logoImage} className="quick-image" ref={imageMoveRef} /&gt;
+    &lt;/div&gt;
+    );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/quick-to" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.quickSetter()</p>
+                <pre><code>gsap.quickSetter(targets, property, vars)</code></pre>
+            </section>
+            <section>
+                <pre><code  data-trim data-line-numbers="5-8" style="font-size: 18px; max-height: 500px;">export const QuickSetter = () => {
+  const imageMoveRef = useRef() as RefObject&lt;HTMLImageElement&gt;;
+  const mouseMove = (e: React.MouseEvent&lt;HTMLDivElement&gt;) =&gt; {
+    const image = imageMoveRef.current;
+    gsap.quickSetter(image, "left")(0);
+    gsap.quickSetter(image, "top")(0);
+    gsap.quickSetter(image, "x", "px")(e.pageX);
+    gsap.quickSetter(image, "y", "px")(e.pageY);
+  };
+  return (
+    &lt;div className="quick" onMouseMove={(e) => mouseMove(e)}&gt;
+      &lt;img src={logoImage} className="quick-image" ref={imageMoveRef} /&gt;
+    &lt;/div>
+    );
+};</code></pre>
+                </section>
+            <section>
+                <iframe src="http://localhost:3000/#/quick-setter" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.context()</p>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="6-9, 18-21 | 10-13, 22-25 | 6-13" style="font-size: 14px; max-height: 610px; line-height: 1.25">const Context = () => {
+  const cartRef1 = useRef() as RefObject&lt;HTMLDivElement>;
+  const cartRef2 = useRef() as RefObject&lt;HTMLDivElement>;
+
+  useEffect(() => {
+    gsap.context(() => {
+      gsap.fromTo(".cart:nth-child(even)", { x: -350 }, { x: 350, duration: 3, repeat: -1 });
+      gsap.fromTo(".cart:nth-child(odd)", { x: 350 }, { x: -350, duration: 3, repeat: -1 });
+    }, cartRef1);
+    gsap.context(() => {
+      gsap.fromTo(".cart:nth-child(even)", { y: -350 }, { y: 350, duration: 3, repeat: -1 });
+      gsap.fromTo(".cart:nth-child(odd)", { y: 350 }, { y: -350, duration: 3, repeat: -1 });
+    }, cartRef2);
+  }, []);
+
+  return (
+    &lt;div className="cart-wrapper">
+      &lt;div className="cart-list cart-list--column" ref={cartRef1}>
+        &lt;div className="cart">Data&lt;/div>
+        &lt;div className="cart">Data&lt;/div>
+      &lt;/div>
+      &lt;div className="cart-list cart-list--column" ref={cartRef2}>
+        &lt;div className="cart">Data&lt;/div>
+        &lt;div className="cart">Data&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/context" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.getById()</p>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="7, 10, 12, 14" style="font-size: 14px; max-height: 610px; line-height: 1.25">const TweenID = () => {
+  const [isPause, setIsPause] = useState(false);
+  const cartRef = useRef() as RefObject&lt;HTMLDivElement>;
+  useEffect(() => {
+    const cart = cartRef.current;
+    gsap.set(cart, { x: -250 });
+    const tween = gsap.to(cart, { id: "cart", yoyo: true, repeat: -1, x: 250, duration: 3 });
+    return () => {
+      tween.revert();
+    };
+  }, []);
+  const pause = () => {
+    const tween = gsap.getById("cart");
+    if (isPause) {
+      tween.play();
+    } else {
+      tween.pause();
+    }
+    setIsPause(!isPause);
+  };
+  return (
+    &lt;>
+      &lt;div className="btn-wrapper">
+        &lt;span className="btn" onClick={pause}>{isPause ? "play" : "pause"}&lt;/span>
+      &lt;/div>
+      &lt;div className="cart-list">
+        &lt;div className="cart" ref={cartRef}>Data&lt;/div>
+      &lt;/div>
+    &lt;/>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/tween-id" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.getTweensOf()</p>
+                <p>gsap.isTweening()</p>
+                <p>gsap.killTweensOf()</p>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="2 | 1 - 9 | 10 | 11" style="font-size: 16px; max-height: 610px; line-height: 1.25">const pause = () => {
+  const tweens = gsap.getTweensOf(cartRef.current);
+  if (isPause) {
+    tweens.forEach((e) => e.play());
+  } else {
+    tweens.forEach((e) => e.pause());
+  }
+  setIsPause(!isPause);
+};
+const removeTweens = () => gsap.killTweensOf(cartRef.current);
+const removeOpacity = () => gsap.killTweensOf(cartRef.current, "opacity");
+  </code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/tween-get" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <p>gsap.timeline()</p>
+                <pre><code>gsap.timeline({properties}).to()...</code></pre>
+            </section>
+            <section>
+                <p>delay</p>
+                <p>onStart / onComplete</p>
+                <p>repeat</p>
+                <p>repeatDelay</p>
+                <p>yoyo</p>
+                <p>paused</p>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="5-9" style="font-size: 16px; max-height: 610px; line-height: 1.25">const Timeline = () => {
+  const cartRef = useRef() as RefObject&lt;HTMLDivElement>;
+  useEffect(() => {
+    const cart = cartRef.current;
+    gsap.timeline({ repeat: -1 })
+      .to(cart, { y: 190, duration: 1 })
+      .to(cart, { x: 430, duration: 2 })
+      .to(cart, { y: 0, duration: 1 })
+      .to(cart, { x: 0, duration: 2 });
+  }, []);
+  return (
+    &lt;div className="cart-list">
+      &lt;div className="cart" ref={cartRef}>Data&lt;/div>
+    &lt;/div>
+  );
+};
+  </code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/timeline" frameborder="0" width="720" height="400"></iframe>
+            </section>
+            <section>
+                <p>gsap.parseEase()</p>
+                <p>gsap.registerEase()</p>
+            </section>
+            <section>
+                <p>gsap.registerEffect()</p>
+                <p>gsap.registerPlugin()</p>
+            </section>
+            <section>
+                <p>gsap.config()</p>
+            </section>
+            <section>
+                <p>gsap.getProperty()</p>
+            </section>
+            <section>
+                <p>gsap.delayedCall()</p>
+            </section>
+
         </section>
         <section><h2>Properties</h2></section>
     </div>
