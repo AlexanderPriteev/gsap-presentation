@@ -12,12 +12,16 @@ import { Context } from './pages/context';
 import { TweenID } from './pages/tweenID';
 import { TweenGet } from './pages/tweenGet';
 import { Timeline } from './pages/timeline';
+import { DelayedCall } from './pages/delayed';
+import { Effects } from './pages/effects';
+import { TimelineGlobal } from './pages/globalTimeLine';
+import { Ticker } from './pages/ticker';
 
 function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Timeline />} />
+        <Route path="/" element={<Ticker />} />
         <Route path="/video" element={<Video />} />
         <Route path="/move" element={<Move />} />
         <Route path="/set" element={<SetMove />} />
@@ -29,6 +33,10 @@ function App() {
         <Route path="/tween-id" element={<TweenID />} />
         <Route path="/tween-get" element={<TweenGet />} />
         <Route path="/timeline" element={<Timeline />} />
+        <Route path="/timeline-global" element={<TimelineGlobal />} />
+        <Route path="/delayed" element={<DelayedCall />} />
+        <Route path="/effects" element={<Effects />} />
+        <Route path="/ticker" element={<Ticker />} />
       </Routes>
     </HashRouter>
   );

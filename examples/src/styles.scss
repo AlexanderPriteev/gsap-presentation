@@ -134,3 +134,22 @@ h1, h2, h3, h4, h5, h6, p{
 
 }
 
+.fps{
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8px;
+  color: #fff;
+  font-size: 25px;
+}
+.tick{
+  height: 26px;
+  position: relative;
+  &-image{
+    width: 120px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

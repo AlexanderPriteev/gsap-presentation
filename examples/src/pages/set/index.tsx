@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import { IRefs } from '../tween';
 
-const CartMove = (props: IRefs) => {
+export const CartMove = (props: IRefs) => {
   useEffect(() => {
     const el = props.elRef.current;
     gsap.set(el, { opacity: 0, x: -400, scale: 0 });

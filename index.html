@@ -120,11 +120,11 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <h3>Methods </h3>
             </section>
             <section>
-                <h2 style="color: #42affa; text-transform: none;">Tween</h2>
+                <h2 style="text-transform: none;">Tween</h2>
 
-                <p>gsap.to()</p>
-                <p>gsap.from()</p>
-                <p>gsap.fromTo()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.to()</h4>
+                <h4 style="color: #42affa; text-transform: none">gsap.from()</h4>
+                <h4 style="color: #42affa; text-transform: none">gsap.fromTo()</h4>
             </section>
             <section>
                 <pre><code>gsap.to(targets, vars)</code></pre>
@@ -161,7 +161,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/move" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.set()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.set()</h4>
             </section>
             <section>
                 <pre><code data-trim data-line-numbers="4 | 5 | 4-5">const CartMove = (props: IRefs) => {
@@ -181,14 +181,14 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/set" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.defaults()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.defaults()</h4>
                 <pre><code>gsap.defaults({ ease: "bounce.in", duration: 3 });</code></pre>
             </section>
             <section>
                 <iframe src="http://localhost:3000/#/default" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.matchMedia()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.matchMedia()</h4>
             </section>
             <section>
                 <pre><code data-trim data-line-numbers="4 | 5-7 | 8-10 | 3-11">const CartMove = (props: IRefs) => {
@@ -215,7 +215,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/media" frameborder="0" width="700" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.quickTo()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.quickTo()</h4>
                 <pre><code>gsap.quickTo(targets, property, vars)</code></pre>
             </section>
             <section>
@@ -237,7 +237,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/quick-to" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.quickSetter()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.quickSetter()</h4>
                 <pre><code>gsap.quickSetter(targets, property, vars)</code></pre>
             </section>
             <section>
@@ -261,7 +261,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/quick-setter" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.context()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.context()</h4>
             </section>
             <section>
                <pre><code  data-trim data-line-numbers="6-9, 18-21 | 10-13, 22-25 | 6-13" style="font-size: 14px; max-height: 610px; line-height: 1.25">const Context = () => {
@@ -297,7 +297,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/context" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.getById()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.getById()</h4>
             </section>
             <section>
                <pre><code  data-trim data-line-numbers="7, 10, 12, 14" style="font-size: 14px; max-height: 610px; line-height: 1.25">const TweenID = () => {
@@ -336,9 +336,9 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <iframe src="http://localhost:3000/#/tween-id" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.getTweensOf()</p>
-                <p>gsap.isTweening()</p>
-                <p>gsap.killTweensOf()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.getTweensOf()</h4>
+                <h4 style="color: #42affa; text-transform: none">gsap.isTweening()</h4>
+                <h4 style="color: #42affa; text-transform: none">gsap.killTweensOf()</h4>
             </section>
             <section>
                <pre><code  data-trim data-line-numbers="2 | 1 - 9 | 10 | 11" style="font-size: 16px; max-height: 610px; line-height: 1.25">const pause = () => {
@@ -358,7 +358,7 @@ const removeOpacity = () => gsap.killTweensOf(cartRef.current, "opacity");
                 <iframe src="http://localhost:3000/#/tween-get" frameborder="0" width="720" height="405"></iframe>
             </section>
             <section>
-                <p>gsap.timeline()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.timeline()</h4>
                 <pre><code>gsap.timeline({properties}).to()...</code></pre>
             </section>
             <section>
@@ -392,25 +392,200 @@ const removeOpacity = () => gsap.killTweensOf(cartRef.current, "opacity");
                 <iframe src="http://localhost:3000/#/timeline" frameborder="0" width="720" height="400"></iframe>
             </section>
             <section>
-                <p>gsap.parseEase()</p>
-                <p>gsap.registerEase()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.registerEffect()</h4>
+                <pre><code>gsap.registerEffect(name, effect, defaults, extendTimeline)</code></pre>
             </section>
             <section>
-                <p>gsap.registerEffect()</p>
-                <p>gsap.registerPlugin()</p>
+               <pre><code  data-trim data-line-numbers="1-13 | 17" style="font-size: 16px; max-height: 610px; line-height: 1.25">  gsap.registerEffect({
+    name: "fadeMoveIn",
+    effect: (elem: HTMLElement, config?: IConfig) => {
+      return gsap.to(elem, {
+        ...config,
+        onComplete: () => {
+          setCartMove(!cartMove);
+        },
+      });
+    },
+    defaults: { duration: 0.5, opacity: 0, x: -400, scale: 0, delay: 0 },
+    extendTimeline: true,
+  });
+
+  const cartMoveController = () => {
+    if (cartMove) {
+      gsap.timeline().fadeMoveIn(cartMoveRef.current);
+    } else {
+      setCartMove(!cartMove);
+    }
+  };</code></pre>
             </section>
             <section>
-                <p>gsap.config()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.config()</h4>
+                <pre><code>gsap.config({properties})</code></pre>
             </section>
             <section>
-                <p>gsap.getProperty()</p>
+                <p>autoSleep </p>
+                <p>force3D </p>
+                <p>nullTargetWarn</p>
+                <p>trialWarn</p>
+                <p>units</p>
+                <pre><code  data-trim data-line-numbers>gsap.config({
+  autoSleep: 60,
+  force3D: false,
+  nullTargetWarn: false,
+  trialWarn: false,
+  units: {left: "%", top: "%", rotation: "rad"}
+});
+                </code></pre>
             </section>
             <section>
-                <p>gsap.delayedCall()</p>
+                <h4 style="color: #42affa; text-transform: none">gsap.getProperty()</h4>
+                <pre><code>gsap.getProperty(element, property, text)</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.delayedCall()</h4>
+                <pre><code>gsap.delayedCall(duration, userFunc, [...userFuncArgs])</code></pre>
+            </section>
+            <section>
+              <pre><code data-trim data-line-numbers = "1-10 | 14" style="font-size: 16px; line-height: 1.25; max-height: 600px">const hideCart = (el: HTMLDivElement, xVal: number) => {
+  gsap.to(el, {
+    opacity: 0,
+    x: xVal,
+    scale: 0,
+    onComplete: () => {
+      setCartMove(!cartMove);
+    },
+  });
+};
+const cartMoveController = () => {
+  const time = 5;
+  if (cartMove && toggle) {
+    gsap.delayedCall(time, hideCart, [cartMoveRef.current, -400]);
+    countdownMove();
+    setToggle(false);
+  } else {
+    setCountdown(time);
+    setCartMove(!cartMove);
+  }
+};
+                </code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/delayed" frameborder="0" width="720" height="400"></iframe>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Properties</h2>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.effects</h4>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="17" style="font-size: 16px; max-height: 610px; line-height: 1.25">  gsap.registerEffect({
+    name: "fadeMoveIn",
+    effect: (elem: HTMLElement, config?: IConfig) => {
+      return gsap.to(elem, {
+        ...config,
+        onComplete: () => {
+          setCartMove(!cartMove);
+        },
+      });
+    },
+    defaults: { duration: 0.5, opacity: 0, x: -400, scale: 0, delay: 0 },
+    extendTimeline: true,
+  });
+
+  const cartMoveController = () => {
+    if (cartMove) {
+      gsap.effects.fadeMoveIn(cartMoveRef.current);
+    } else {
+      setCartMove(!cartMove);
+    }
+  };</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.globalTimeline</h4>
+            </section>
+            <section>
+                <p>gsap.globalTimeline.pause()</p>
+                <p>gsap.globalTimeline.play()</p>
+                <p>gsap.globalTimeline.paused()</p>
+                <p>gsap.globalTimeline.timeScale()</p>
+            </section>
+            <section>
+                               <pre><code  data-trim data-line-numbers="3, 9, 11" style="font-size: 16px; max-height: 610px; line-height: 1.25">  const [speed, speedDispatch] = useReducer(speedReducer, 1);
+  useEffect(() => {
+    gsap.globalTimeline.timeScale(speed);
+  }, [speed]);
+  useEffect(() => { /* timeline code */ }, []);
+
+  const pause = () => {
+    if (isPause) {
+      gsap.globalTimeline.play();
+    } else {
+      gsap.globalTimeline.pause();
+    }
+    setIsPause(!isPause);
+  };
+
+  const fast = () => speedDispatch("fast");
+  const slow = () => speedDispatch("slow");</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/timeline-global" frameborder="0" width="720" height="460"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.ticker</h4>
+            </section>
+            <section>
+                <p>gsap.ticker.add()</p>
+                <pre><code>gsap.ticker.add(MyFunction)</code></pre>
+                <br>
+                <p>gsap.ticker.remove()</p>
+                <pre><code>gsap.ticker.remove(MyFunction)</code></pre>
+            </section>
+            <section>
+                <p>gsap.ticker.fps()</p>
+                <pre><code>gsap.ticker.fps(number)  // 0 < number <= 60</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/ticker" frameborder="0" width="720" height="460"></iframe>
+            </section>
+            <section>
+                <p>gsap.ticker.deltaRatio()</p>
+                <pre><code>gsap.ticker.deltaRatio(number)</code></pre>
+            </section>
+            <section>
+                <p>gsap.ticker.lagSmoothing(threshold, adjustedLag)</p>
+            </section>
+            <section>
+                <div style="overflow: hidden; ">
+                    <iframe src="https://codepen.io/GreenSock/embed/preview/e3ac33404937de0eb77c789323367da8?default-tab=result&height=556&slug-hash=NyXBbV&theme-id=3984&user=GreenSock" frameborder="0" width="100%" height="600"
+                            style="transform: translateY(-70px)"></iframe>
+                </div>
             </section>
 
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.utils</h4>
+            </section>
         </section>
-        <section><h2>Properties</h2></section>
+        <section>
+            <section>
+                <h2>Utility Methods</h2>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">checkPrefix()</h4>
+                <pre><code>gsap.utils.checkPrefix("cssPropertyName");</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">clamp()</h4>
+                <pre><code>gsap.utils.clamp(number1, number2, number3);</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">clamp()</h4>
+                <pre><code>gsap.utils.clamp(number1, number2, number3);</code></pre>
+            </section>
+        </section>
     </div>
 </div>
 
