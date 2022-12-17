@@ -87,6 +87,14 @@ h1, h2, h3, h4, h5, h6, p{
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  &--distribute{
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    border: 1px solid #fff;
+  }
+
   &-list{
     width: 100%;
     flex-grow: 1;
@@ -100,10 +108,21 @@ h1, h2, h3, h4, h5, h6, p{
       overflow: hidden;
       background-color: #424242;
     }
+    &--wrap{
+      flex-direction: column;
+      overflow: hidden;
+      align-items: flex-start;
+    }
     &--block{
       width: 680px;
       height: 340px;
       display: block;
+      margin: auto;
+      flex-grow: inherit;
+    }
+    &--distribute{
+      width: 330px;
+      height: 330px;
       margin: auto;
       flex-grow: inherit;
     }
@@ -151,5 +170,71 @@ h1, h2, h3, h4, h5, h6, p{
     position: absolute;
     left: 0;
     top: 0;
+  }
+}
+
+.eases{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  gap: 10px;
+  max-height: 550px;
+  margin: auto;
+  background-color: #191919;
+  &-menu{
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 250px;
+    background-color: #21004c;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    &-block{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+  &-btn{
+    display: inline-block;
+    cursor: pointer;
+    &.active{
+      color: #42affa;
+    }
+  }
+  &-container{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 120px;
+    overflow: hidden;
+  }
+  &-dot{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+  }
+  &-line{
+    width: 80px;
+    height: 2px;
+    background-color: #fff;
+  }
+  &-wrapper{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  &-title{
+    padding-top: 20px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
   }
 }

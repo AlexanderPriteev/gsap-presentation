@@ -49,7 +49,7 @@
         </section>
         <section>
             <section>
-                <h3>Скорость и Производительность</h3>
+                <h2>Скорость и Производительность</h2>
             </section>
 
             <section>
@@ -582,8 +582,284 @@ const cartMoveController = () => {
                 <pre><code>gsap.utils.clamp(number1, number2, number3);</code></pre>
             </section>
             <section>
-                <h4 style="color: #42affa; text-transform: none">clamp()</h4>
-                <pre><code>gsap.utils.clamp(number1, number2, number3);</code></pre>
+                <h4 style="color: #42affa; text-transform: none">distribute()</h4>
+                <pre><code>gsap.utils.distribute({parameters}});</code></pre>
+            </section>
+            <section>
+                <p>base</p>
+                <p>amount</p>
+                <p>each</p>
+                <p>from</p>
+                <p>grid</p>
+                <p>axis</p>
+                <p>ease</p>
+            </section>
+            <section>
+               <pre><code data-trim data-line-numbers="6-11 | 5-12" style="font-size: 16px; max-height: 610px; line-height: 1.25">const Distribute = () => {
+  const [step, setStep] = useState(1);
+  const distribute = () => {
+    setStep(((step + 2) % 3) - 1);
+    gsap.to('.cart', {
+      scale: gsap.utils.distribute({
+        base: 1,
+        amount: step * 2,
+        from: 'center',
+        grid: 'auto',
+      }),
+    });
+  };
+  return (
+    <>
+      &lt;div className="btn-wrapper">
+        &lt;span className="btn" onClick={distribute}>Distribute&lt;/span>
+      &lt;/div>
+      &lt;div className="cart-list cart-list--distribute">
+        {new Array(5).fill(null).map((e, i) => (
+          &lt;div key={i} className="cart-list">
+            {new Array(5).fill(null).map((e1, i1) => (
+              &lt;div key={i1} className="cart cart--distribute" />
+            ))}
+          &lt;/div>
+        ))}
+      &lt;div>
+    &lt;/>
+  );
+};</code></pre>
+            </section>
+            <section>
+               <iframe src="http://localhost:3000/#/distribute" frameborder="0" width="460" height="540"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">getUnit()</h4>
+                <pre><code>gsap.utils.getUnit(value); // "20rem" => "rem" </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">interpolate()</h4>
+                <p>numbers, colors, strings, arrays, objects</p>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 16px;">gsap.utils.interpolate(startValue, endValue, progress);
+gsap.utils.interpolate("20px", "40px", 0.5); // "30px"
+                </code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 16px;">gsap.utils.interpolate(array, progress);
+gsap.utils.interpolate(["red", "green", "blue"], 0.25); // "rgba(128,64,0,1)"</code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 16px;">gsap.utils.interpolate(startValue, endValue)(progress);
+const interp = gsap.utils.interpolate({a:0, b:10, c:"red"}, {a:100, b:20, c:"blue"});
+interp(0.5); // {a: 50, b: 15, c: "rgba(128,0,128,1)"}</code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 16px;">gsap.utils.interpolate(array, progress);
+const interp = gsap.utils.interpolate(["red", "green", "blue"]);
+interp(0.25); // "rgba(128,64,0,1)"
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">mapRange()</h4>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.mapRange(inMin, inMax, outMin, outMax, valueToMap);
+gsap.utils.mapRange(-10, 10, 100, 200, 0); // 150
+                </code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.mapRange(inMin, inMax, outMin, outMax)(valueToMap);
+const mapper = gsap.utils.mapRange(0, 100, 0, 250);
+mapper(50); // 125
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">normalize()</h4>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.normalize(minimum, maximum, valueToNormalize)
+gsap.utils.normalize(0, 100, 25); // 0.25
+                </code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.normalize(minimum, maximum)(valueToNormalize);
+const clamper = gsap.utils.normalize(0, 100);
+clamper(50) // 0.5
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">pipe()</h4>
+                <pre><code>gsap.utils.pipe(functions);</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">random()</h4>
+                <pre><code style="font-size: 16px;">gsap.utils.random(minimum, maximum[, snapIncrement, returnFunction]);</code></pre>
+                <pre><code style="font-size: 16px;">random(array[, returnFunction]);</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">selector()</h4>
+                <pre><code>gsap.utils.selector(myElement); </code></pre>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="3-4, 6 | 3-4, 6-15" style="font-size: 16px; line-height: 1.2; max-height: 600px">const Select = () => {
+  const data = new Array(25).fill(null);
+  const elem = useRef() as RefObject&lt;HTMLDivElement>;
+  const select = gsap.utils.selector(elem);
+  useEffect(() => {
+    const carts = select('.cart');
+    gsap.set(carts, { opacity: 0, scale: 0 });
+    gsap.to(carts, {
+      opacity: 1,
+      scale: 1,
+      stagger: 0.05,
+      repeat: -1,
+      repeatDelay: 2,
+      yoyo: true,
+    });
+  }, [select]);
+
+  return (
+    &lt;div className="cart-list cart-list--distribute" ref={elem}>
+      {data.fill(null).map((e, i) => (
+        &lt;div key={i} className="cart cart--distribute" />
+      ))}
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/select" frameborder="0" width="720" height="460"></iframe>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers style="font-size: 15px; line-height: 1.4; ">  const cartRef1 = useRef() as RefObject&lt;HTMLDivElement>;
+  const cartRef2 = useRef() as RefObject&lt;HTMLDivElement>;
+
+  useEffect(() => {
+    const select1 = gsap.utils.selector(cartRef1);
+    const select2 = gsap.utils.selector(cartRef2);
+    gsap.fromTo(select1('.cart:nth-child(even)'), { x: -350 }, { x: 350, duration: 3, repeat: -1 });
+    gsap.fromTo(select1('.cart:nth-child(odd)'), { x: 350 }, { x: -350, duration: 3, repeat: -1 });
+    gsap.fromTo(select2('.cart:nth-child(even)'), { y: -350 }, { y: 350, duration: 3, repeat: -1 });
+    gsap.fromTo(select2('.cart:nth-child(odd)'), { y: 350 }, { y: -350, duration: 3, repeat: -1 });
+  }, []);</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/select-context" frameborder="0" width="720" height="460"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">shuffle()</h4>
+                <pre><code>gsap.utils.shuffle(array); </code></pre>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="13" style="font-size: 16px; line-height: 1.2; max-height: 600px">const Shuffle = () => {
+  const tmpArray = new Array(25).fill(null).map((e, i) => i + 1);
+  const [data, setData] = useState([...tmpArray]);
+  const elem = useRef() as RefObject&lt;HTMLDivElement>;
+
+  useEffect(() => {
+    const carts = gsap.utils.selector(elem)('.cart');
+    gsap.set(carts, { opacity: 0, scale: 0 });
+    gsap.to(carts, { opacity: 1, scale: 1, stagger: 0.05 });
+  }, [data]);
+
+  const shuffle = () => {
+    setData(gsap.utils.shuffle([...data]));
+  };
+
+  return (
+    <>
+      &lt;div className="btn-wrapper">
+        &lt;span className="btn" onClick={shuffle}>Shuffle&lt;/span>
+      &lt;/div>
+      &lt;div className="cart-list cart-list--distribute" ref={elem}>
+        {data.map((e, i) => (
+          &lt;div key={i} className="cart cart--distribute">{e}&lt;/div>
+        ))}
+      &lt;/div>
+    &lt;/>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/shuffle" frameborder="0" width="380" height="460"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">snap()</h4>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.snap(snapIncrement, valueToSnap);
+gsap.utils.snap(10, 23.5); // 20
+gsap.utils.snap([100, 50, 500], 65); // 50
+                </code></pre>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.snap(snapIncrement)(valueToSnap);
+const snap = gsap.utils.snap(5);
+snap(0.5); // 0
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">splitColor()</h4>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.splitColor(value);
+gsap.utils.splitColor("red"); // [255, 0, 0]
+gsap.utils.splitColor("#6fb936"); // [111, 185, 54]
+gsap.utils.splitColor("rgba(204, 153, 51, 0.5)"); // [204, 153, 51, 0.5]
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">toArray()</h4>
+                <pre><code>gsap.utils.toArray(myElement);</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">unitize()</h4>
+                <pre><code data-trim data-line-numbers="1" style="font-size: 18px;">gsap.utils.unitize(function, unit);
+const clamp = gsap.utils.unitize( gsap.utils.clamp(0, 100), "px");
+clamp(132); // 100px
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">wrap() / wrapYoyo()</h4>
+                <pre><code>gsap.utils.wrap(value1, value2, index)</code></pre>
+                <pre><code>gsap.utils.wrapYoyo(value1, value2, index)</code></pre>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="8, 9, 12, 17" style="font-size: 16px; line-height: 1.2; max-height: 600px">const Wrap = () => {
+  const cartRef1 = useRef() as RefObject&lt;HTMLDivElement>;
+  const cartRef2 = useRef() as RefObject&lt;HTMLDivElement>;
+  gsap.defaults({ duration: 25, ease: 'none', repeat: -1, x: 9999 });
+  useEffect(() => {
+    const el1 = cartRef1.current;
+    const el2 = cartRef2.current;
+    const wrap = gsap.utils.wrap(-270, window.innerWidth);
+    const wrapYoyo = gsap.utils.wrapYoyo(0, window.innerWidth - 290);
+    gsap.to(el1, {
+      modifiers: {
+        x: (x) => wrap(parseFloat(x)) + 'px',
+      },
+    });
+    gsap.to(el2, {
+      modifiers: {
+        x: (x) => wrapYoyo(parseFloat(x)) + 'px',
+      },
+    });
+  }, []);
+
+  return (
+    &lt;div className="cart-list cart-list--wrap">
+      &lt;div className="cart" ref={cartRef1}>Wrap&lt;/div>
+      &lt;div className="cart" ref={cartRef2}>WrapYoyo&lt;/div>
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/wrap" frameborder="0" width="720" height="460"></iframe>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Вектор движения анимации <span style="color: #42affa;">(Eases)</span></h2>
+            </section>
+            <section>
+                <p style="font-size: 24px; margin: 12px">none</p>
+                <p style="font-size: 24px; margin: 12px">power1 / power2 / power3 / power4</p>
+                <p style="font-size: 24px; margin: 12px">back</p>
+                <p style="font-size: 24px; margin: 12px">elastic</p>
+                <p style="font-size: 24px; margin: 12px">bounce</p>
+                <p style="font-size: 24px; margin: 12px">slow</p>
+                <p style="font-size: 24px; margin: 12px">steps</p>
+                <p style="font-size: 24px; margin: 12px">circ</p>
+                <p style="font-size: 24px; margin: 12px">expo</p>
+                <p style="font-size: 24px; margin: 12px">sine</p>
+            </section>
+            <section>
+                <p>out</p>
+                <p>in</p>
+                <p>inOut</p>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/eases" frameborder="0" width="720" height="600"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">Custom</h4>
             </section>
         </section>
     </div>

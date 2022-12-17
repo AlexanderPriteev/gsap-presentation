@@ -16,12 +16,18 @@ import { DelayedCall } from './pages/delayed';
 import { Effects } from './pages/effects';
 import { TimelineGlobal } from './pages/globalTimeLine';
 import { Ticker } from './pages/ticker';
+import { Distribute } from './pages/utility/distribute';
+import { Select } from './pages/utility/selector/array';
+import { ContextSelector } from './pages/utility/selector/context';
+import { Shuffle } from './pages/utility/shuffle';
+import { Wrap } from './pages/utility/wrap';
+import { Eases } from './pages/eases';
 
 function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Ticker />} />
+        <Route path="/" element={<Eases />} />
         <Route path="/video" element={<Video />} />
         <Route path="/move" element={<Move />} />
         <Route path="/set" element={<SetMove />} />
@@ -37,6 +43,12 @@ function App() {
         <Route path="/delayed" element={<DelayedCall />} />
         <Route path="/effects" element={<Effects />} />
         <Route path="/ticker" element={<Ticker />} />
+        <Route path="/distribute" element={<Distribute />} />
+        <Route path="/select" element={<Select />} />
+        <Route path="/select-context" element={<ContextSelector />} />
+        <Route path="/shuffle" element={<Shuffle />} />
+        <Route path="/wrap" element={<Wrap />} />
+        <Route path="/eases" element={<Eases />} />
       </Routes>
     </HashRouter>
   );

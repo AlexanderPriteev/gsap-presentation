@@ -23,7 +23,6 @@ export const Ticker = () => {
   }, [speed]);
 
   useEffect(() => {
-
     const cart = cartRef.current;
     gsap
       .timeline({ repeat: -1 })
