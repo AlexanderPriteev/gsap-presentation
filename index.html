@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>reveal.js</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/png">
+    <title>GSAP - Презентация</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
@@ -65,14 +65,10 @@
                 <div><a href="https://codepen.io/lugindm/pen/aboMRJW">GSAP</a> | <a
                         href="https://codepen.io/lugindm/pen/NWGEoxB">Anime</a></div>
             </section>
-            <section>
-                <div><a href="http://localhost:3000/#/video" style="font-size: 26px">Scroll Video</a></div>
-                <iframe src="http://localhost:3000/#/video" frameborder="0" width="720" height="405"></iframe>
-            </section>
         </section>
         <section>
             <section>
-                <h3>установка и подключение</h3>
+                <h2>установка и подключение</h2>
             </section>
             <section>
 
@@ -84,7 +80,7 @@ yarn add gsap
                     </pre>
             </section>
             <section>
-                <h4 style="text-transform: none">ES modules</h4>
+                <h4 style="text-transform: none; color: #42affa">ES modules</h4>
                 	<pre>
                         <code data-trim data-line-numbers="1|2-3|1-3">
 import gsap from "gsap";
@@ -96,7 +92,7 @@ import ScrollTrigger from "gsap/src/ScrollTrigger";
                     </pre>
             </section>
             <section>
-                <h4 style="text-transform: none">CommonJS</h4>
+                <h4 style="text-transform: none; color: #42affa">CommonJS</h4>
                 <pre>
                         <code data-trim data-line-numbers="1-3">
 const { gsap } = require("gsap/dist/gsap");
@@ -106,7 +102,7 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                     </pre>
             </section>
             <section>
-                <h4 style="text-transform: none">&lt;script /&gt;</h4>
+                <h4 style="text-transform: none; color: #42affa">&lt;script /&gt;</h4>
                 <pre>
                         <code data-trim data-line-numbers="1-2">
 <script src="./js/gsap/gsap.min.js"></script>
@@ -117,11 +113,9 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
         </section>
         <section>
             <section>
-                <h3>Methods </h3>
+                <h2>Tween </h2>
             </section>
             <section>
-                <h2 style="text-transform: none;">Tween</h2>
-
                 <h4 style="color: #42affa; text-transform: none">gsap.to()</h4>
                 <h4 style="color: #42affa; text-transform: none">gsap.from()</h4>
                 <h4 style="color: #42affa; text-transform: none">gsap.fromTo()</h4>
@@ -132,14 +126,17 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
                 <pre><code>gsap.fromTo(targets, fromVars, toVars)</code></pre>
             </section>
             <section>
-                <p>id</p>
-                <p>duration</p>
-                <p>ease</p>
-                <p>delay</p>
-                <p>onStart / onComplete</p>
-                <p>repeat</p>
-                <p>yoyo</p>
-                <p>paused</p>
+                <p style="font-size: 26px; margin: 12px">id</p>
+                <p style="font-size: 26px; margin: 12px">duration</p>
+                <p style="font-size: 26px; margin: 12px">ease</p>
+                <p style="font-size: 26px; margin: 12px">delay</p>
+                <p style="font-size: 26px; margin: 12px">paused</p>
+                <p style="font-size: 26px; margin: 12px">onStart / onComplete</p>
+                <p style="font-size: 26px; margin: 12px">repeat / repeatDelay</p>
+                <p style="font-size: 26px; margin: 12px">yoyo</p>
+                <p style="font-size: 26px; margin: 12px">stagger</p>
+                <p style="font-size: 26px; margin: 12px">startAt</p>
+                <p style="font-size: 26px; margin: 12px">reversed</p>
             </section>
             <section>
                 <pre><code  data-trim data-line-numbers="3-7">const CartMove = (props: IRefs) => {
@@ -159,6 +156,216 @@ const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
             </section>
             <section>
                 <iframe src="http://localhost:3000/#/move" frameborder="0" width="720" height="405"></iframe>
+            </section>
+            <section>
+                <h2 style="text-transform: none">Methods</h2>
+            </section>
+            <section>
+                <p style="font-size: 26px; margin: 12px">.delay()</p>
+                <p style="font-size: 26px; margin: 12px">.duration()</p>
+                <p style="font-size: 26px; margin: 12px">.eventCallback() / .then()</p>
+                <p style="font-size: 26px; margin: 12px">.repeat() / .repeatDelay()</p>
+                <p style="font-size: 26px; margin: 12px">.paused()</p>
+                <p style="font-size: 26px; margin: 12px">.reversed()</p>
+                <p style="font-size: 26px; margin: 12px">.yoyo()</p>
+            </section>
+            <section>
+                <p style="font-size: 26px; margin: 12px">.isActive()</p>
+                <p style="font-size: 26px; margin: 12px">.time() / .totalTime()</p>
+                <p style="font-size: 26px; margin: 12px">.startTime()</p>
+                <p style="font-size: 26px; margin: 12px">.timeScale()</p>
+                <p style="font-size: 26px; margin: 12px">.endTime()</p>
+                <p style="font-size: 26px; margin: 12px">.startTime()()</p>
+                <p style="font-size: 26px; margin: 12px">.totalDuration()</p>
+
+            </section>
+            <section>
+                <p style="font-size: 26px; margin: 12px">.pause()</p>
+                <p style="font-size: 26px; margin: 12px">.play() / .resume()</p>
+                <p style="font-size: 26px; margin: 12px">.invalidate()</p>
+                <p style="font-size: 26px; margin: 12px">.restart()</p>
+                <p style="font-size: 26px; margin: 12px">.kill()</p>
+                <p style="font-size: 26px; margin: 12px">.progress() / .totalProgress()</p>
+                <p style="font-size: 26px; margin: 12px">.seek()</p>
+                <p style="font-size: 26px; margin: 12px">.iteration()</p>
+                <p style="font-size: 26px; margin: 12px">.revert()</p>
+            </section>
+            <section>
+                <h2 style="text-transform: none">Properties</h2>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">.ratio</h4>
+                <pre><code data-trim data-line-numbers style="font-size: 18px">const tween = gsap.to(elem, {opacity: 1, duration: 1, ease: "power2.out"});
+tween.pause(0.5);
+tween.progress(); // 0.5
+tween.ratio; // 0.875
+                </code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">.vars</h4>
+            </section>
+            <section>
+                <p style="font-size: 26px; margin: 12px">callbackScope</p>
+                <p style="font-size: 26px; margin: 12px">data</p>
+                <p style="font-size: 26px; margin: 12px">delay</p>
+                <p style="font-size: 26px; margin: 12px">duration</p>
+                <p style="font-size: 26px; margin: 12px">ease</p>
+                <p style="font-size: 26px; margin: 12px">id</p>
+                <p style="font-size: 26px; margin: 12px">repeat</p>
+                <p style="font-size: 26px; margin: 12px">startAt</p>
+                <p style="font-size: 26px; margin: 12px">...</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Timeline</h2>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.timeline()</h4>
+                <pre><code>gsap.timeline({properties}).to()...</code></pre>
+            </section>
+            <section>
+                <p>delay</p>
+                <p>onStart / onComplete</p>
+                <p>repeat</p>
+                <p>repeatDelay</p>
+                <p>yoyo</p>
+                <p>paused</p>
+            </section>
+            <section>
+               <pre><code  data-trim data-line-numbers="5-9" style="font-size: 16px; max-height: 610px; line-height: 1.25">const Timeline = () => {
+  const cartRef = useRef() as RefObject&lt;HTMLDivElement>;
+  useEffect(() => {
+    const cart = cartRef.current;
+    gsap.timeline({ repeat: -1 })
+      .to(cart, { y: 190, duration: 1 })
+      .to(cart, { x: 430, duration: 2 })
+      .to(cart, { y: 0, duration: 1 })
+      .to(cart, { x: 0, duration: 2 });
+  }, []);
+  return (
+    &lt;div className="cart-list">
+      &lt;div className="cart" ref={cartRef}>Data&lt;/div>
+    &lt;/div>
+  );
+};
+  </code></pre>
+            </section>
+
+            <section>
+                <iframe src="http://localhost:3000/#/timeline" frameborder="0" width="720" height="400"></iframe>
+            </section>
+
+            <section>
+                <h2 style="text-transform: none">Methods</h2>
+            </section>
+
+            <section>
+                <p>.to()</p>
+                <p>.from()</p>
+                <p>.fromTo()</p>
+            </section>
+
+            <section>
+                <p>.delay(), .duration(), .endTime(), .eventCallback(), .globalTime(), .invalidate(), .isActive(), .iteration(), .kill(), .pause(), .paused(), .play(), .progress(), .repeat(), .repeatDelay(), .restart(), .resume(), .reverse(), .reversed(), .revert(), .seek(), .startTime(), .targets(), .then(), .time(), .timeScale(), .totalDuration(), .totalProgress(), .totalTime(), .yoyo()</p>
+            </section>
+
+            <section>
+                <p>.set()</p>
+                <p>.getById()</p>
+                <p>.getTweensOf()</p>
+                <p>.killTweensOf()</p>
+            </section>
+
+            <section>
+                <p>.add()</p>
+                <p>.call()</p>
+                <p>.clear()</p>
+                <p>.recent()</p>
+                <p>.addPause()</p>
+                <p>.removePause()</p>
+            </section>
+
+            <section>
+                <p>.addLabel()</p>
+                <p>.currentLabel()</p>
+                <p>.previousLabel()</p>
+                <p>.nextLabel()</p>
+                <p>.removeLabel()</p>
+                <p>.tweenFromTo()</p>
+                <p>.tweenTo()</p>
+            </section>
+
+            <section>
+                <h2 style="text-transform: none">Properties</h2>
+            </section>
+            <section>
+                <p>.vars</p>
+                <p>.labels</p>
+                <p>.parent</p>
+                <p>.smoothChildTiming</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Вектор движения анимации <span style="color: #42affa;">(Eases)</span></h2>
+            </section>
+            <section>
+                <p style="font-size: 24px; margin: 12px">none</p>
+                <p style="font-size: 24px; margin: 12px">power1 / power2 / power3 / power4</p>
+                <p style="font-size: 24px; margin: 12px">back</p>
+                <p style="font-size: 24px; margin: 12px">elastic</p>
+                <p style="font-size: 24px; margin: 12px">bounce</p>
+                <p style="font-size: 24px; margin: 12px">steps</p>
+            </section>
+            <section>
+                <p>out</p>
+                <p>in</p>
+                <p>inOut</p>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/eases" frameborder="0" width="720" height="600"></iframe>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">CustomEase</h4>
+                <pre><code>gsap.registerPlugin(CustomEase);</code></pre>
+                <pre><code data-trim data-line-numbers="1 | 2 | 3-6" style="font-size: 20px">CustomEase.create(name, path)
+CustomEase.create("custom", ".17,.67,.83,.67");.
+CustomEase.create(
+  "custom",
+  "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1"
+)
+                </code></pre>
+                <pre><code style="font-size: 15px">gsap.to(elem, { duration: 2.5, ease: CustomEase.create("custom", ".17,.67,.83,.67"), y: -500 });</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">ExpoScaleEase</h4>
+                <pre><code>gsap.registerPlugin(ExpoScaleEase);</code></pre>
+                <pre><code style="font-size: 15px">gsap.to(elem, { duration: 1, scale: 2, ease: "expoScale(1, 2)")});</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">RoughEase</h4>
+                <pre><code>gsap.registerPlugin(RoughEase);</code></pre>
+                <pre><code style="font-size: 15px">gsap.from(elem, {duration: 1, opacity: 0, ease: "rough"});</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">SlowMo</h4>
+                <pre><code>gsap.registerPlugin(SlowMo);</code></pre>
+                <pre><code style="font-size: 15px">gsap.from(elem, {duration: 5, x: 600, ease: "slow(0.5, 0.8)"});</code></pre>
+            </section>
+            <section>
+                <p style="color: #FF5555">CustomBounce, CustomWiggle</p>
+                <br>
+                <h4 style="color: #42affa; text-transform: none">CustomBounce</h4>
+                <pre><code>gsap.registerPlugin(CustomEase, CustomBounce);</code></pre>
+                <br>
+                <h4 style="color: #42affa; text-transform: none">CustomWiggle</h4>
+                <pre><code>gsap.registerPlugin(CustomEase, CustomWiggle);</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Methods </h2>
             </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">gsap.set()</h4>
@@ -356,40 +563,6 @@ const removeOpacity = () => gsap.killTweensOf(cartRef.current, "opacity");
             </section>
             <section>
                 <iframe src="http://localhost:3000/#/tween-get" frameborder="0" width="720" height="405"></iframe>
-            </section>
-            <section>
-                <h4 style="color: #42affa; text-transform: none">gsap.timeline()</h4>
-                <pre><code>gsap.timeline({properties}).to()...</code></pre>
-            </section>
-            <section>
-                <p>delay</p>
-                <p>onStart / onComplete</p>
-                <p>repeat</p>
-                <p>repeatDelay</p>
-                <p>yoyo</p>
-                <p>paused</p>
-            </section>
-            <section>
-               <pre><code  data-trim data-line-numbers="5-9" style="font-size: 16px; max-height: 610px; line-height: 1.25">const Timeline = () => {
-  const cartRef = useRef() as RefObject&lt;HTMLDivElement>;
-  useEffect(() => {
-    const cart = cartRef.current;
-    gsap.timeline({ repeat: -1 })
-      .to(cart, { y: 190, duration: 1 })
-      .to(cart, { x: 430, duration: 2 })
-      .to(cart, { y: 0, duration: 1 })
-      .to(cart, { x: 0, duration: 2 });
-  }, []);
-  return (
-    &lt;div className="cart-list">
-      &lt;div className="cart" ref={cartRef}>Data&lt;/div>
-    &lt;/div>
-  );
-};
-  </code></pre>
-            </section>
-            <section>
-                <iframe src="http://localhost:3000/#/timeline" frameborder="0" width="720" height="400"></iframe>
             </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">gsap.registerEffect()</h4>
@@ -834,33 +1007,198 @@ clamp(132); // 100px
                 <iframe src="http://localhost:3000/#/wrap" frameborder="0" width="720" height="460"></iframe>
             </section>
         </section>
+
         <section>
+            <section><h2>Plugins<br><span style="color: #42affa;">(Краткий обзор)</span></h2></section>
+
             <section>
-                <h2>Вектор движения анимации <span style="color: #42affa;">(Eases)</span></h2>
+                <h2 style="text-transform: none">Core Plugins</h2>
             </section>
             <section>
-                <p style="font-size: 24px; margin: 12px">none</p>
-                <p style="font-size: 24px; margin: 12px">power1 / power2 / power3 / power4</p>
-                <p style="font-size: 24px; margin: 12px">back</p>
-                <p style="font-size: 24px; margin: 12px">elastic</p>
-                <p style="font-size: 24px; margin: 12px">bounce</p>
-                <p style="font-size: 24px; margin: 12px">slow</p>
-                <p style="font-size: 24px; margin: 12px">steps</p>
-                <p style="font-size: 24px; margin: 12px">circ</p>
-                <p style="font-size: 24px; margin: 12px">expo</p>
-                <p style="font-size: 24px; margin: 12px">sine</p>
+                <h4 style="color: #42affa; text-transform: none">AttrPlugin</h4>
+                <pre><code style="font-size: 20px">gsap.to(elem, {duration: 1, attr: {x:100, y: 50, width: 100, height: 100}});</code></pre>
             </section>
             <section>
-                <p>out</p>
-                <p>in</p>
-                <p>inOut</p>
+                <h4 style="color: #42affa; text-transform: none">EndArrayPlugin</h4>
             </section>
             <section>
-                <iframe src="http://localhost:3000/#/eases" frameborder="0" width="720" height="600"></iframe>
+                                <pre><code data-trim data-line-numbers="4, 7 | 4-11" style="font-size: 16px; line-height: 1.2; max-height: 600px">const EndArray = () => {
+  const [arr, setArr] = useState([0, 0, 0]);
+  const setData = () => {
+    const tmpArr = [0, 0, 0];
+    gsap.to(tmpArr, {
+      duration: 4,
+      endArray: [99, 999, 9999],
+      onUpdate() {
+        setArr(tmpArr.map((e) => Math.round(e)));
+      },
+    });
+  };
+  return (
+    &lt;>
+      &lt;div className="btn-wrapper">
+        &lt;span className="btn" onClick={setData}>
+          set
+        &lt;/span>
+      &lt;/div>
+      &lt;div className="cart-list">
+        {arr.map((e, i) => (
+          &lt;div key={i} className="cart">
+            {e}
+         &lt;/div>
+        ))}
+      &lt;div>
+    &lt;/>
+  );
+};</code></pre>
             </section>
             <section>
-                <h4 style="color: #42affa; text-transform: none">Custom</h4>
+                <iframe src="http://localhost:3000/#/array-end" frameborder="0" width="830" height="270"></iframe>
             </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">ModifiersPlugin</h4>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="2-5, 7-9" style="font-size: 16px; line-height: 1.2; max-height: 600px">
+gsap.to(el1, {
+  modifiers: {
+    x: (x) => wrap(parseFloat(x)) + 'px',
+  },
+});
+gsap.to(el2, {
+  modifiers: {
+    x: (x) => wrapYoyo(parseFloat(x)) + 'px',
+  },
+});
+</code></pre>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">SnapPlugin</h4>
+            </section>
+            <section>
+                <pre><code data-trim data-line-numbers="8-10 | 5-13" style="font-size: 16px; line-height: 1.2; max-height: 600px">
+export const Snap = () => {
+  const cartRef = useRef() as RefObject&lt;HTMLDivElement>;
+  useEffect(() => {
+    const elem = cartRef.current;
+    gsap.to(elem, {
+      duration: 4,
+      x: 430,
+      snap: {
+        x: 86, // 430 / 5
+      },
+      repeat: -1,
+      yoyo: true,
+    });
+  }, []);
+
+  return (
+    &lt;div className="cart-list cart-list--snap">
+      &lt;div className="cart" ref={cartRef}>
+        Data
+      &lt;/div>
+    &lt;/div>
+  );
+};
+</code></pre>
+            </section>
+            <section>
+                <iframe src="http://localhost:3000/#/snap" frameborder="0" width="720" height="190"></iframe>
+            </section>
+
+            <section>
+                <h2 style="text-transform: none">Other Plugins</h2>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">gsap.registerPlugin()</h4>
+            </section>
+            <section>
+                <h4 style="color: #42affa; text-transform: none">ScrollTrigger</h4>
+                <pre><code>gsap.registerPlugin(ScrollTrigger);</code></pre>
+                <pre><code>gsap.to(elem, {
+  scrollTrigger: elem,
+  x: 500
+});</code></pre>
+            </section>
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">ScrollToPlugin</h4>
+                <pre><code>gsap.registerPlugin(ScrollToPlugin);</code></pre>
+                <pre><code>gsap.to(window, {duration: 2, scrollTo: 400});
+gsap.to(window, {duration: 2, scrollTo: elem});</code></pre>
+            </section>
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">TextPlugin</h4>
+                <pre><code>gsap.registerPlugin(TextPlugin);</code></pre>
+                <pre><code style="font-size: 20px">gsap.to(elem, {duration: 2, text: "This is the new text", ease: "none"});</code></pre>
+            </section>
+
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">Flip</h4>
+                <pre><code>gsap.registerPlugin(Flip);</code></pre>
+                <div style="overflow: hidden; ">
+                    <iframe src="https://codepen.io/GreenSock/embed/02b5ff28e7175110cad7d24a1dce7201/?height=600&theme-id=3984&default-tab=result" frameborder="0" width="100%" height="600"
+                            style="transform: translateY(-70px)"></iframe>
+                </div>
+            </section>
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">MotionPathPlugin</h4>
+                <pre><code>gsap.registerPlugin(MotionPathPlugin);</code></pre>
+                <pre><code  data-trim data-line-numbers="1 | 2 | 3 | 4-13" style="font-size: 16px">gsap.to(elem, {motionPath: "M9,100c0,0,18-41,49-65, duration: 5});
+gsap.to(elem, {motionPath: [{x:100, y:50}, {x:200, y:0}, {x:300, y:100}], duration: 5});
+gsap.to(elem, {motionPath:[{scale:0.5, rotation:10}, {scale:0.8, rotation:3}], duration: 5});
+gsap.to(elem, {motionPath:{
+    path: "#pathID",
+    align: "#pathID",
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true,
+    start: 0.25,
+    end: 0.75
+  },
+ duration: 5
+});</code></pre>
+
+            </section>
+
+
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">Observer</h4>
+                <pre><code>gsap.registerPlugin(Observer);</code></pre>
+                <pre><code>Observer.create({
+  target: window,
+  type: "wheel,touch",
+  onUp: () => previous(),
+  onDown: () => next(),
+});</code></pre>
+            </section>
+
+            <section>
+                <h4 style="color: #42affa; text-transform: none">Draggable</h4>
+                <pre><code>gsap.registerPlugin(Draggable);</code></pre>
+                <pre><code>gsap.registerPlugin(elem, {vars});</code></pre>
+            </section>
+
+            <section>
+                <h2 style="text-transform: none; color:#FF5555">Club Plugins</h2>
+                <a href="https://greensock.com/club/">club plans</a>
+            </section>
+            <section>
+                <p>GSDevTools</p>
+                <p>DrawSVG / MorphSVG</p>
+                <p>CustomBounce / CustomWiggle</p>
+                <p>Physics2D / PhysicsProps</p>
+                <p>ScrollSmoother</p>
+                <p>SplitText</p>
+                <p>MotionPathHelper</p>
+            </section>
+        </section>
+        <section>
+            <h2>Спасибо за Внимание</h2>
+            <h2 style="color: #42affa;" >Вопросы?</h2>
         </section>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import React, { RefObject, useEffect, useRef, useState } from 'react';
+import React, { RefObject, useRef, useState } from 'react';
 
 type TMove = 'out' | 'in' | 'inOut';
 
@@ -11,10 +11,18 @@ export const Eases = () => {
   gsap.defaults({ duration: 2 });
 
   const moveLine = (ease: string) => {
+    const arr = [1, 2, 3];
+    gsap.to(arr, {
+      endArray: [5, 6, 7],
+      onUpdate() {
+        console.log(arr);
+      },
+    });
+
     gsap.set(dotRef.current, { y: 0 });
     gsap.set(lineRef.current, { height: 2 });
-    gsap.to(dotRef.current, { ease: ease, y: -380 });
-    gsap.to(lineRef.current, { ease: ease, height: 460 });
+    gsap.to(dotRef.current, { ease: ease, y: -340 });
+    gsap.to(lineRef.current, { ease: ease, height: 420 });
     setTile(ease);
   };
 
@@ -77,20 +85,8 @@ export const Eases = () => {
           <span className="eases-btn" onClick={() => moveLine(`bounce.${move}`)}>
             bounce
           </span>
-          <span className="eases-btn" onClick={() => moveLine(`slow (0.7, 0.7, false)`)}>
-            slow
-          </span>
-          <span className="eases-btn" onClick={() => moveLine(`steps (12)`)}>
+          <span className="eases-btn" onClick={() => moveLine(`steps(4)`)}>
             steps
-          </span>
-          <span className="eases-btn" onClick={() => moveLine(`circ.${move}`)}>
-            circ
-          </span>
-          <span className="eases-btn" onClick={() => moveLine(`expo.${move}`)}>
-            expo
-          </span>
-          <span className="eases-btn" onClick={() => moveLine(`sine.${move}`)}>
-            sine
           </span>
         </div>
         <span className="eases-btn active" onClick={reset}>

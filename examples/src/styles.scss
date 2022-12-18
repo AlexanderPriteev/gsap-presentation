@@ -6,13 +6,20 @@ body{
 .page-wrapper{
   background-color: #424242;
   min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+.container{
+  flex-grow: 1;
   overflow: hidden;
-  padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
 }
+
 .video-background {
   position: fixed;
   top: 50%;
@@ -120,6 +127,13 @@ h1, h2, h3, h4, h5, h6, p{
       margin: auto;
       flex-grow: inherit;
     }
+    &--snap{
+      width: 680px;
+      height: 150px;
+      display: block;
+      margin: auto;
+      flex-grow: inherit;
+    }
     &--distribute{
       width: 330px;
       height: 330px;
@@ -181,6 +195,7 @@ h1, h2, h3, h4, h5, h6, p{
   max-height: 550px;
   margin: auto;
   background-color: #191919;
+  max-width: 1000px;
   &-menu{
     box-sizing: border-box;
     padding: 20px;
@@ -213,6 +228,7 @@ h1, h2, h3, h4, h5, h6, p{
     justify-content: center;
     gap: 120px;
     overflow: hidden;
+    padding-bottom: 40px;
   }
   &-dot{
     width: 80px;
@@ -236,5 +252,48 @@ h1, h2, h3, h4, h5, h6, p{
     font-weight: 600;
     text-align: center;
     color: #fff;
+  }
+}
+
+.main-image{
+  display: inline-block;
+  width: 500px;
+  margin: auto;
+}
+
+.nav{
+  width: 200px;
+  min-width: 200px;
+  background-color: #21004c;
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+  padding: 20px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  &-item{
+    color: #42affa;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: opacity .2s linear;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  &-title{
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: .5px;
   }
 }
