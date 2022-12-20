@@ -25,6 +25,9 @@ import { EndArray } from './pages/plagins/endArray';
 import { Snap } from './pages/plagins/snap';
 import { Home } from './pages/main';
 import { Index } from './pages/layout';
+import { FlipMove } from './pages/plagins/flip/all';
+import { FlipShuffle } from './pages/plagins/flip/shuffle';
+import { Text } from './pages/plagins/text';
 
 function App() {
   return (
@@ -98,6 +101,14 @@ function App() {
 
           <Route path="/snap" element={<Snap />} />
           <Route path="/snap-menu" element={<Snap />} />
+
+          <Route path="/flip" element={<FlipMove />} />
+          <Route path="/flip-menu" element={<FlipMove />} />
+          <Route path="/flip-shuffle" element={<FlipShuffle />} />
+          <Route path="/flip-shuffle-menu" element={<FlipShuffle />} />
+
+          <Route path="/text" element={<Text />} />
+          <Route path="/text-menu" element={<Text />} />
 
           <Route path="*" element={<Home />} />
         </Route>

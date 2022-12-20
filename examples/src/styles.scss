@@ -94,6 +94,20 @@ h1, h2, h3, h4, h5, h6, p{
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  &-remove{
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.2 6.2C20.7 5.7 20.8 4.8 20.2 4.2C19.6 3.6 18.7 3.6 18.1 4.1L12.1 10.2L6 4C5.4 3.4 4.5 3.5 4 4C3.4 4.6 3.4 5.4 4 6L10.1 12.2L4 18.3C3.4 19 3.4 19.8 4 20.4C4.6 21 5.5 21 6 20.4L12.4 14.2L18.1 20.2C18.7 20.7 19.7 20.8 20.2 20.3C20.8 19.7 20.7 18.7 20.1 18.2L14.2 12.2L20.2 6.2L20.2 6.24Z' fill='white'/%3E%3C/svg%3E%0A");
+  }
 
   &--distribute{
     width: 50px;
@@ -125,20 +139,24 @@ h1, h2, h3, h4, h5, h6, p{
       height: 340px;
       display: block;
       margin: auto;
-      flex-grow: inherit;
+      flex-grow: 0;
     }
     &--snap{
       width: 680px;
       height: 150px;
       display: block;
       margin: auto;
-      flex-grow: inherit;
+      flex-grow: 0;
     }
     &--distribute{
       width: 330px;
       height: 330px;
       margin: auto;
-      flex-grow: inherit;
+      flex-grow: 0;
+    }
+    &--flip{
+      flex-grow: 0;
+      align-items: flex-start;
     }
   }
   &-wrapper{
@@ -272,8 +290,18 @@ h1, h2, h3, h4, h5, h6, p{
   gap: 28px;
   box-sizing: border-box;
   padding: 20px;
+  max-height: 100vh;
+  overflow: auto;
   @media (max-width: 767px) {
     display: none;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #34066E;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #481090;
+    border-radius: 6px;
   }
 
   &-block{
@@ -295,5 +323,28 @@ h1, h2, h3, h4, h5, h6, p{
     text-transform: uppercase;
     font-size: 18px;
     letter-spacing: .5px;
+  }
+}
+
+
+.type{
+  &-text{
+    font-weight: 500;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 700px;
+    margin: auto;
+  }
+  &-input{
+    flex-grow: 1;
+    max-width: 880px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    padding: 0 16px;
+    font-size: 16px;
   }
 }

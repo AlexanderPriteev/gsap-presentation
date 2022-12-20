@@ -1131,17 +1131,56 @@ gsap.to(window, {duration: 2, scrollTo: elem});</code></pre>
             <section>
                 <h4 style="color: #42affa; text-transform: none">TextPlugin</h4>
                 <pre><code>gsap.registerPlugin(TextPlugin);</code></pre>
-                <pre><code style="font-size: 20px">gsap.to(elem, {duration: 2, text: "This is the new text", ease: "none"});</code></pre>
+            </section>
+            <section>
+                <pre><code  data-trim data-line-numbers>
+    gsap.to(element, {
+      duration: 1,
+      text: {
+        value: textValue,
+        speed: 0.7,
+        type: 'diff',
+      },
+      ease: 'none',
+    });
+                </code></pre>
             </section>
 
-
+            <section>
+                <iframe src="./examples/build/#/text" frameborder="0" width="845" height="440"></iframe>
+            </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">Flip</h4>
                 <pre><code>gsap.registerPlugin(Flip);</code></pre>
-                <div style="overflow: hidden; ">
-                    <iframe src="https://codepen.io/GreenSock/embed/02b5ff28e7175110cad7d24a1dce7201/?height=600&theme-id=3984&default-tab=result" frameborder="0" width="100%" height="600"
-                            style="transform: translateY(-70px)"></iframe>
-                </div>
+            </section>
+            <section>
+                  <pre><code  data-trim data-line-numbers="1, 7, 21 | 1, 7, 10-17, 21" style="font-size: 16px; line-height: 1.2; max-height: 600px">
+  gsap.registerPlugin(Flip);
+  const tmpArray = new Array(25).fill(null).map((e, i) => ({ id: i, data: i + 1 }));
+  const [data, setData] = useState([...tmpArray]);
+  const elem = useRef() as RefObject&lt;HTMLDivElement>;
+
+  const cartList = gsap.utils.selector(elem);
+  const [state, setState] = useState(null as null | Flip.FlipState);
+  useEffect(() => {
+    if (!state) return;
+    Flip.from(state, {
+      targets: cartList('.cart'),
+      duration: 1,
+      ease: 'power1.inOut'
+    });
+  }, [cartList, state]);
+
+  const shuffle = () => {
+    setState(Flip.getState(cartList('.cart')));
+    setData([...gsap.utils.shuffle(data)]);
+  };</code></pre>
+            </section>
+            <section>
+                <iframe src="./examples/build/#/flip-shuffle" frameborder="0" width="375" height="440"></iframe>
+            </section>
+            <section>
+                <iframe src="./examples/build/#/flip" frameborder="0" width="845" height="440"></iframe>
             </section>
 
             <section>

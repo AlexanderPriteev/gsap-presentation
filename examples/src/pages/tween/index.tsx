@@ -4,6 +4,7 @@ import React, { RefObject, useEffect, useRef, useState } from 'react';
 
 export interface IRefs {
   elRef: RefObject<HTMLDivElement>;
+  data?: string;
 }
 
 const Block = (props: IRefs) => {
@@ -20,6 +21,7 @@ const Block = (props: IRefs) => {
 };
 
 const Cart = (props: IRefs) => {
+  const data = props.data || 'Data';
   useEffect(() => {
     gsap.fromTo(
       props.elRef.current,
@@ -33,7 +35,7 @@ const Cart = (props: IRefs) => {
   }, [props.elRef]);
   return (
     <div className="cart" ref={props.elRef}>
-      Data
+      {data}
     </div>
   );
 };

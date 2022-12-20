@@ -92,6 +92,15 @@ export const Nav = () => {
         <NavLink to="/snap-menu" className="nav-item">
           SnapPlugin
         </NavLink>
+        <NavLink to="/text-menu" className="nav-item">
+          TextPlugin
+        </NavLink>
+        <NavLink to="/flip-menu" className="nav-item">
+          Flip 1
+        </NavLink>
+        <NavLink to="/flip-shuffle-menu" className="nav-item">
+          Flip 2
+        </NavLink>
       </div>
     </nav>
   );
