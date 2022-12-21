@@ -28,6 +28,9 @@ import { Index } from './pages/layout';
 import { FlipMove } from './pages/plagins/flip/all';
 import { FlipShuffle } from './pages/plagins/flip/shuffle';
 import { Text } from './pages/plagins/text';
+import { TriggerScroll } from './pages/plagins/scrollTrigger';
+import { ScrollTo } from './pages/plagins/scrollTo';
+import { PathMotion } from './pages/plagins/motionPath';
 
 function App() {
   return (
@@ -102,13 +105,22 @@ function App() {
           <Route path="/snap" element={<Snap />} />
           <Route path="/snap-menu" element={<Snap />} />
 
+          <Route path="/text" element={<Text />} />
+          <Route path="/text-menu" element={<Text />} />
+
+          <Route path="/trigger-scroll" element={<TriggerScroll />} />
+          <Route path="/trigger-scroll-menu" element={<TriggerScroll />} />
+
+          <Route path="/scroll-to" element={<ScrollTo />} />
+          <Route path="/scroll-to-menu" element={<ScrollTo />} />
+
           <Route path="/flip" element={<FlipMove />} />
           <Route path="/flip-menu" element={<FlipMove />} />
           <Route path="/flip-shuffle" element={<FlipShuffle />} />
           <Route path="/flip-shuffle-menu" element={<FlipShuffle />} />
 
-          <Route path="/text" element={<Text />} />
-          <Route path="/text-menu" element={<Text />} />
+          <Route path="/motion-path" element={<PathMotion />} />
+          <Route path="/motion-path-menu" element={<PathMotion />} />
 
           <Route path="*" element={<Home />} />
         </Route>

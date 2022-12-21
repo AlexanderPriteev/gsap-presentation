@@ -1114,23 +1114,86 @@ export const Snap = () => {
             </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">ScrollTrigger</h4>
-                <pre><code>gsap.registerPlugin(ScrollTrigger);</code></pre>
+                <pre><code>import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);</code></pre>
                 <pre><code>gsap.to(elem, {
   scrollTrigger: elem,
   x: 500
 });</code></pre>
             </section>
-
+            <section>
+                  <pre><code  data-trim data-line-numbers="2, 13-21" style="font-size: 16px; line-height: 1.2; max-height: 600px">
+const TriggerScroll = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const cartListRef = useRef() as RefObject&lt;HTMLDivElement>;
+  useEffect(() => {
+    const el = gsap.utils.selector(cartListRef);
+    const rotateCard = () => {
+      gsap.to(el('.cart'), {id: 'rotate', duration: 2, rotate: 360, repeat: -1});
+    };
+    const rotateCardKill = () => {
+      gsap.getById('rotate').kill();
+      gsap.to(el('.cart'), { rotate: 0 });
+    };
+    ScrollTrigger.create({
+      trigger: el('.block--3'),
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: rotateCard,
+      onEnterBack: rotateCard,
+      onLeave: rotateCardKill,
+      onLeaveBack: rotateCardKill,
+    });
+  }, []);
+  return (
+    &lt;div className="cart-list" ref={cartListRef}>
+      &lt;div className="cart cart--trigger">ScrollTrigger&lt;/div>
+      &lt;div className="block" />
+      &lt;div className="block block--3" />
+      &lt;div className="block" />
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="./examples/build/#/trigger-scroll" frameborder="0" width="720" height="500"></iframe>
+            </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">ScrollToPlugin</h4>
-                <pre><code>gsap.registerPlugin(ScrollToPlugin);</code></pre>
-                <pre><code>gsap.to(window, {duration: 2, scrollTo: 400});
-gsap.to(window, {duration: 2, scrollTo: elem});</code></pre>
+                <pre><code>import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);</code></pre>
+            </section>
+            <section>
+                  <pre><code  data-trim data-line-numbers="2, 6" style="font-size: 16px; line-height: 1.2; max-height: 600px">const ScrollTo = () => {
+  gsap.registerPlugin(ScrollToPlugin);
+  const cartListRef = useRef() as RefObject&lt;HTMLDivElement>;
+
+  const scroll = (elemClass: string, time?: number) => {
+    gsap.to(window, { duration: time || 2, scrollTo: elemClass, ease: 'power3.out' });
+  };
+  return (
+    &lt;div className="cart-list" ref={cartListRef}>
+      &lt;div className="block block--1">
+        &lt;span className="btn btn-nav" onClick={() => scroll('.block--3')}>Block 3&lt;/span>
+      &lt;/div>
+      &lt;div className="block block--2">
+        &lt;span className="btn" onClick={() => scroll('.block--1', 5)}>Block 1&lt;/span>
+      &lt;/div>
+      &lt;div className="block block--3">
+        &lt;span className="btn" onClick={() => scroll('.block--1', 4)}>Block 1&lt;/span>
+      &lt;/div>
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="./examples/build/#/scroll-to" frameborder="0" width="720" height="500"></iframe>
             </section>
 
             <section>
                 <h4 style="color: #42affa; text-transform: none">TextPlugin</h4>
-                <pre><code>gsap.registerPlugin(TextPlugin);</code></pre>
+                <pre><code>import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(TextPlugin);</code></pre>
             </section>
             <section>
                 <pre><code  data-trim data-line-numbers>
@@ -1151,7 +1214,8 @@ gsap.to(window, {duration: 2, scrollTo: elem});</code></pre>
             </section>
             <section>
                 <h4 style="color: #42affa; text-transform: none">Flip</h4>
-                <pre><code>gsap.registerPlugin(Flip);</code></pre>
+                <pre><code>import { Flip } from 'gsap/Flip';
+gsap.registerPlugin(Flip);</code></pre>
             </section>
             <section>
                   <pre><code  data-trim data-line-numbers="1, 7, 21 | 1, 7, 10-17, 21" style="font-size: 16px; line-height: 1.2; max-height: 600px">
@@ -1185,28 +1249,46 @@ gsap.to(window, {duration: 2, scrollTo: elem});</code></pre>
 
             <section>
                 <h4 style="color: #42affa; text-transform: none">MotionPathPlugin</h4>
-                <pre><code>gsap.registerPlugin(MotionPathPlugin);</code></pre>
-                <pre><code  data-trim data-line-numbers="1 | 2 | 3 | 4-13" style="font-size: 16px">gsap.to(elem, {motionPath: "M9,100c0,0,18-41,49-65, duration: 5});
-gsap.to(elem, {motionPath: [{x:100, y:50}, {x:200, y:0}, {x:300, y:100}], duration: 5});
-gsap.to(elem, {motionPath:[{scale:0.5, rotation:10}, {scale:0.8, rotation:3}], duration: 5});
-gsap.to(elem, {motionPath:{
-    path: "#pathID",
-    align: "#pathID",
-    alignOrigin: [0.5, 0.5],
-    autoRotate: true,
-    start: 0.25,
-    end: 0.75
-  },
- duration: 5
-});</code></pre>
-
+                <pre><code>import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+gsap.registerPlugin(MotionPathPlugin);</code></pre>
             </section>
+            <section>
+                  <pre><code  data-trim data-line-numbers="2 | 6-7 | 9-14 | 8-19" style="font-size: 16px; line-height: 1.2; max-height: 600px">const PathMotion = () => {
+  gsap.registerPlugin(MotionPathPlugin);
+  const imageMoveRef = useRef() as RefObject&lt;HTMLImageElement>;
 
+  useEffect(() => {
+    const path =
+	'M1 39C123 -61 136 89 238 23C341 -42 380 82 443 23C505 -35 601 39 601 39';
+    gsap.to(imageMoveRef.current, {
+      motionPath: {
+        path: path,
+        offsetX: -300,
+        offsetY: -20,
+        autoRotate: true,
+      },
+      duration: 4,
+      repeat: -1,
+      ease: 'none',
+      yoyo: true,
+    });
+  }, []);
 
+  return (
+    &lt;div className="quick">
+      &lt;img src={logoImage} className="quick-image" ref={imageMoveRef} />
+    &lt;/div>
+  );
+};</code></pre>
+            </section>
+            <section>
+                <iframe src="./examples/build/#/motion-path" frameborder="0" width="720" height="600"></iframe>
+            </section>
 
             <section>
                 <h4 style="color: #42affa; text-transform: none">Observer</h4>
-                <pre><code>gsap.registerPlugin(Observer);</code></pre>
+                <pre><code>import { Observer } from 'gsap/Observer';
+gsap.registerPlugin(Observer);</code></pre>
                 <pre><code>Observer.create({
   target: window,
   type: "wheel,touch",
@@ -1217,8 +1299,9 @@ gsap.to(elem, {motionPath:{
 
             <section>
                 <h4 style="color: #42affa; text-transform: none">Draggable</h4>
-                <pre><code>gsap.registerPlugin(Draggable);</code></pre>
-                <pre><code>gsap.registerPlugin(elem, {vars});</code></pre>
+                <pre><code>import { Draggable } from 'gsap/Draggable';
+gsap.registerPlugin(Draggable);</code></pre>
+                <pre><code>Draggable.create(elem, {vars});</code></pre>
             </section>
 
             <section>

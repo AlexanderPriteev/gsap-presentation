@@ -115,6 +115,11 @@ h1, h2, h3, h4, h5, h6, p{
     border-radius: 0;
     border: 1px solid #fff;
   }
+  &--trigger{
+    position: fixed;
+    left: calc(50% - 125px);
+    top: calc(50% - 62px);
+  }
 
   &-list{
     width: 100%;
@@ -192,6 +197,12 @@ h1, h2, h3, h4, h5, h6, p{
   padding: 8px;
   color: #fff;
   font-size: 25px;
+}
+.path{
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-size: 17px;
 }
 .tick{
   height: 26px;
@@ -280,9 +291,10 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .nav{
+  position: sticky;
+  top: 0;
   width: 200px;
   min-width: 200px;
-  background-color: #21004c;
   color: #fff;
   font-size: 15px;
   display: flex;
@@ -294,6 +306,10 @@ h1, h2, h3, h4, h5, h6, p{
   overflow: auto;
   @media (max-width: 767px) {
     display: none;
+  }
+  &-wrapper{
+    position: relative;
+    background-color: #21004c;
   }
   &::-webkit-scrollbar {
     width: 10px;
@@ -346,5 +362,22 @@ h1, h2, h3, h4, h5, h6, p{
     box-sizing: border-box;
     padding: 0 16px;
     font-size: 16px;
+  }
+}
+.block{
+  width: 100%;
+  height: 100vh;
+  background-color: #9346F6;
+  box-sizing: border-box;
+  padding: 20px;
+
+  &--1{
+    background-color: #AF71FF;
+  }
+  &--2{
+    background-color: #C69AFF;
+  }
+  &--3{
+    background-color: #DDC3FF;
   }
 }
